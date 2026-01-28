@@ -1,8 +1,33 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+the is a demo for wasm, skia, and next.js
+
 ## Getting Started
 
-First, run the development server:
+wasm compiler:
+
+```bash
+### create new directory  names emsdk
+mkdir emsdk
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+
+emsdk install latest
+emsdk activate latest
+
+# set environment
+emsdk_env.bat
+```
+
+then cd to project directory
+
+```
+npm run build:wasm
+```
+
+the wasm-main.js and wasm-main.wasm will be generated in the public directory
+
+run the development server:
 
 ```bash
 npm run dev
