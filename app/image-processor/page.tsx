@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react';
 import { useWasm, Module } from '@/hooks/useWasm';
 
-export function ImageProcessor() {
+export default function ImageProcessor() {
   const canvasRef = useRef<null | HTMLCanvasElement>(null);
   const { module, loading } = useWasm();
   const [fibResult, setFibResult] = useState<null | number>(null);

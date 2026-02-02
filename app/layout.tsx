@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { LinkItem } from "@/components/LinkItem";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen items-center py-10 px-25 bg-zinc-50 font-sans dark:bg-black">
+          <div className="flex self-start">
+            <LinkItem href="/image-processor">
+              Image Processor
+            </LinkItem>
+          </div>
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );
